@@ -1,0 +1,60 @@
+<%= form_with(model: raw_material) do |form| %>
+  <% if raw_material.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(raw_material.errors.count, "error") %> prohibited this raw_material from being saved:</h2>
+
+      <ul>
+        <% raw_material.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container">
+    <div class="col-sm-12 mb-3">
+    <%= form.label :product_name, style: "display: block" %>
+    <%= form.text_field :product_name %>
+    </div>
+  
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :product_type, style: "display: block" %>
+    <%= form.text_field :product_type %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :volume_solid, style: "display: block" %>
+    <%= form.text_field :volume_solid %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :weight_solid, style: "display: block" %>
+    <%= form.text_field :weight_solid %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :volatile_organic_compound, style: "display: block" %>
+    <%= form.text_field :volatile_organic_compound %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :pigment_volume_concentration, style: "display: block" %>
+    <%= form.text_field :pigment_volume_concentration %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :density, style: "display: block" %>
+    <%= form.text_field :density %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="col-sm-12 mb-3">
+    <%= form.submit %>
+  </div>
+</div>
+<% end %>
