@@ -1,14 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Raw materials Index</h1>
+<h1 class="text-center">Raw materials Index</h1>
 
 <div id="raw_materials">
   <% @raw_materials.each do |raw_material| %>
     <%= render raw_material %>
     <p>
-      <%= link_to "Show this raw material", raw_material %>
+      <%= link_to "Show this raw material", raw_material, class:"btn btn-outline-success btn-sm" %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New raw material", new_raw_material_path %>
+<%= link_to "New raw material", new_raw_material_path, class:"btn btn-outline-success btn-sm" %>
