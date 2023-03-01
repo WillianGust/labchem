@@ -25,7 +25,7 @@ class RawMaterialsController < ApplicationController
 
     respond_to do |format|
       if @raw_material.save
-        format.html { redirect_to raw_material_url(@raw_material), notice: "Raw material was successfully created." }
+        format.html { redirect_to raw_materials_path(@raw_material), notice: "Raw material was successfully created." }
         format.json { render :show, status: :created, location: @raw_material }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class RawMaterialsController < ApplicationController
   def update
     respond_to do |format|
       if @raw_material.update(raw_material_params)
-        format.html { redirect_to raw_material_url(@raw_material), notice: "Raw material was successfully updated." }
+        format.html { redirect_to raw_materials_path(@raw_material), notice: "Raw material was successfully updated." }
         format.json { render :show, status: :ok, location: @raw_material }
       else
         format.html { render :edit, status: :unprocessable_entity }

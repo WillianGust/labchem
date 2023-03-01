@@ -8,11 +8,13 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "styles", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "fonts", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-<body class="sb-nav-fixed">
+
+<body id="page-top">
     <%= render 'layouts/navbar'%>
     <%= render 'layouts/navbar_content'%>
   <div class="col-12">
