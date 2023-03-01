@@ -1,15 +1,13 @@
 <div class="col-12">
-<p style="color: green"><%= notice %></p>
-  <h1 class="text-center">Raw materials Index</h1>
+  <p style="color: green"><%= notice %></p>
 
-  <div id="raw_materials">
+  <div class="raw_materials mb-3" id="raw_materials">
+    <h1 class="text-center">Raw materials Index</h1>
     <% @raw_materials.each do |raw_material| %>
       <%= render raw_material %>
-      <p>
-        <%= link_to "Show this raw material", raw_material, class:"btn btn-outline-success btn-sm" %>
-      </p>
-    <% end %>
+      <%= link_to "Show this raw material", raw_material, class:"btn btn-outline-success btn-sm" %>
       <%= link_to "New raw material", new_raw_material_path, class:"btn btn-outline-success btn-sm" %>
-  </div>
+    <% end %>
+  </div>  
 </div>
 

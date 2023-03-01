@@ -75,6 +75,11 @@
     scroll-behavior: smooth;
   }
 }
+.raw_materials{
+  margin-top: 50px;
+  margin-left: 250px;
+  margin-right: 20px;
+}
 
 body {
   margin: 0;
@@ -597,7 +602,9 @@ progress {
 .blockquote-footer::before {
   content: "— ";
 }
-
+.footer{
+  margin-left: 225px;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;

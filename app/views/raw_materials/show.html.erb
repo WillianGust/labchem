@@ -1,14 +1,14 @@
 <div class="col-12">
   <p style="color: green"><%= notice %></p>
-    <h1 class="text-center">Showing Raw Material</h1>
 
-      <div class="col-12">
-        <%= render @raw_material %>
-      </div>
+  <div class="raw_materials">
+    <h1 class="text-center">Showing Raw Material</h1>
+    <%= render @raw_material %>
+    <%= link_to "Edit this raw material", edit_raw_material_path(@raw_material), class:"btn btn-outline-success btn-sm"%>
+    <%= link_to "Back to raw materials", raw_materials_path, class:"btn btn-outline-success btn-sm" %>
+  </div>
 
       <div class="container form-floating mb-3">
-        <%= link_to "Edit this raw material", edit_raw_material_path(@raw_material), class:"btn btn-outline-success btn-sm"%>
-        <%= link_to "Back to raw materials", raw_materials_path, class:"btn btn-outline-success btn-sm" %>
         <%# <%= button_to "Destroy this raw material", @raw_material, method: :delete, class:"btn btn-danger" %> 
       </div>
 </div>
