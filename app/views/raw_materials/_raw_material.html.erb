@@ -16,7 +16,7 @@
     </thead>
 
       <tbody>
-      <% @raw_materials.each do |raw_material| %>
+      <% @raw_materials.try(:each) do |raw_material| %>
         <tr>
           <td><%= raw_material.product_name %></td>
           <td><%= raw_material.product_type %></td>
@@ -26,8 +26,8 @@
           <td class="text-center"><%= raw_material.pigment_volume_concentration %></td>
           <td class="text-center"><%= raw_material.density %></td>
           <td class="text-center"><%= raw_material.price %></td>
-          <td class="text-center"><%= button_to "Delete", raw_material, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm" %></td>
-          <td><%= button_to "Show", raw_material, class:"btn btn-outline-success btn-sm mb-3" %></td>
+          <td class="text-center"><%= button_to "Delete", raw_material, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm"%></td> 
+          <td><%= link_to "Show", raw_material, class:"btn btn-outline-success btn-sm mb-3"%></td>
         </tr>
         <% end %>
       </tbody>

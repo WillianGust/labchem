@@ -3,7 +3,19 @@
   <div class="raw_materials">
   <p style="color: green"><%= notice %></p>
     <h1 class="text-center">Showing Raw Material</h1>
-    <%= render @raw_material %>
+    
+    <div>
+
+      <div class="text-center"><label for="">Nome do produto:</label><%= @raw_material.product_name %></div>
+      <div class="text-center"><label for="">Nome do tipo:</label><%= @raw_material.product_type %></div>
+      <div class="text-center"><label for="">Nome do Volume Solidos:</label><%= @raw_material.volume_solid %></div>
+      <div class="text-center"><label for="">Nome do Peso solido:</label><%= @raw_material.weight_solid %></div>
+      <div class="text-center"><label for="">Nome do VOC:</label><%= @raw_material.volatile_organic_compound %></div>
+      <div class="text-center"><label for="">Nome do PVC:</label><%= @raw_material.pigment_volume_concentration %></div>
+      <div class="text-center"><label for="">Nome do Density:</label><%= @raw_material.density %></div>
+      <div class="text-center"><label for="">Nome do preco:</label><%= @raw_material.price %></div>
+
+    </div>
     <%= link_to "Edit this raw material", edit_raw_material_path(@raw_material), class:"btn btn-outline-success btn-sm"%>
     <%= link_to "Back to raw materials", raw_materials_path, class:"btn btn-outline-success btn-sm" %>
   </div>
