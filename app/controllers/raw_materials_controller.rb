@@ -4,6 +4,19 @@ class RawMaterialsController < ApplicationController
   # GET /raw_materials or /raw_materials.json
   def index
     @raw_materials = RawMaterial.all
+
+    if params[:product_name].present?
+      # @raw_materials = @raw_materials.where("raw_materials.product_name ilike '%#{params[:product_name]}%' or raw_materials.product_type ilike '%#{params[:product_name]}%'")
+    
+      product_name_like = RawMaterial.arel_table["product_name"]
+      product_type_like = RawMaterial.arel_table["product_type"]
+      @raw_materials = @raw_materials.where(product_name_like.matches("%#{params[:product_name]}%")).or(@raw_materials.where(product_type_like.matches("%#{params[:product_name]}%")))
+
+    
+    end
+
+    # options = {page: params[:page] || 1, per_page:5}
+    # @raw_materials = @raw_materials.paginate(options)
   end
 
   # GET /raw_materials/1 or /raw_materials/1.json
