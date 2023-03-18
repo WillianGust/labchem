@@ -30,3 +30,6 @@ Search
 5- Para o atributo value no input colocar dinamicamente o "<%= params[:product_name] %>", onde params=parametros ruby, atribuut no array vem da coluna da tabela o qua deseja fazer a busca
 6- Para o atributo name do input, colocar o nome da coluna a qual deseja buscar
 7- Uma vez isso feito, ir para o controller respectivo e na index colocar o codigo para generico o qual utilizar DB seja Mysql ou postgrsql
+
+Paginate
+1- Needed to update the version (put the version) on gemfile to work well

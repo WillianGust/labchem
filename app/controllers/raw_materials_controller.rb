@@ -15,8 +15,8 @@ class RawMaterialsController < ApplicationController
     
     end
 
-    # options = {page: params[:page] || 1, per_page:5}
-    # @raw_materials = @raw_materials.paginate(options)
+    options = {page: params[:page] || 1, per_page:2}
+    @raw_materials = @raw_materials.paginate(options)
   end
 
   # GET /raw_materials/1 or /raw_materials/1.json
