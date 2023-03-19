@@ -4,6 +4,8 @@
   <p style="color: green"><%= notice %></p>
   <div class="container">
     <h1 class="text-left">Showing Raw Material</h1>
+    
+  <%= render 'shared/modal'%>
 
     <div class="text-left">
       <b><label class="label" for="">Nome do produto:</label></b> <%= @raw_material.product_name %>
