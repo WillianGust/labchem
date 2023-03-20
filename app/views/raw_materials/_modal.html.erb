@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal-<%= raw_material.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><%= raw_material.product_name %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="text-left">
+          <b><label for="">Tipo:</label></b> <%= raw_material.product_type %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Volume Solidos:</label></b> <%= raw_material.volume_solid %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Peso Solidos:</label></b> <%= raw_material.weight_solid %>
+        </div>
+        <div class="text-left">
+          <b><label for="">VOC:</label></b> <%= raw_material.volatile_organic_compound %>
+        </div>
+        <div class="text-left">
+          <b><label for="">PVC:</label></b> <%= raw_material.pigment_volume_concentration %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Densidade:</label></b> <%= raw_material.density %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Preco:</label></b> <%= raw_material.price %>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Edit this raw material", edit_raw_material_path(raw_material), class:"btn btn-outline-success btn-sm" %>
+        </div>
+    </div>
+    

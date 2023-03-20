@@ -20,8 +20,8 @@ class RawMaterialsController < ApplicationController
   end
 
   # GET /raw_materials/1 or /raw_materials/1.json
-  def show
-    
+
+  def show  
   end
 
   # GET /raw_materials/new

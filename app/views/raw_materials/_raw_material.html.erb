@@ -11,14 +11,15 @@
         <th>Density</th>
         <th>Price</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
 
       <tbody>
       <% @raw_materials.each do |raw_material| %>
         <tr>
-          <td><%= link_to raw_material.product_name, raw_material %></td>
-          <td><%= link_to raw_material.product_type, raw_material %></td>
+          <td><%= raw_material.product_name %></td>
+          <td><%= raw_material.product_type %></td>
           <td class="text-center"><%= raw_material.volume_solid %></td>
           <td class="text-center"><%= raw_material.weight_solid %></td>
           <td class="text-center"><%= raw_material.volatile_organic_compound %></td>
@@ -26,13 +27,15 @@
           <td class="text-center"><%= raw_material.density %></td>
           <td class="text-center"><%= raw_material.price %></td>
           <td class="text-center"><%= button_to "Delete", raw_material, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-outline-danger btn-sm"%></td> 
-          <td class="text-center"><button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Launch demo modal<%= link_to "Show", raw_material, class:"btn btn-outline-primary btn-sm"%>
-                                  </button></td> 
+          <td class="text-center">
+            <button type="button" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal-<%= raw_material.id %>">
+               Show
+            </button>
+          </td> 
         </tr>
+          <%= render 'modal', raw_material: raw_material %>
         <% end %>
       </tbody>
     </table>
 <%= will_paginate @raw_materials, :container => false %>
 </div>
-<%= render 'shared/modal'%>
