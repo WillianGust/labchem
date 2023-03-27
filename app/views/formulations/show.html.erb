@@ -1,10 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @formulation %>
+
+<div class="text-left">
+      <b><label class="label" for="">Product name: </label></b> <%= @formulation.product_name %>
+    </div>
+    <div class="text-left">
+      <b><label for="">Description: </label></b> <%= @formulation.description %>
+    </div>
+
 
 <div>
-  <%= link_to "Edit this formulation", edit_formulation_path(@formulation) %> |
-  <%= link_to "Back to formulations", formulations_path %>
-
-  <%= button_to "Destroy this formulation", @formulation, method: :delete %>
+  <%= link_to "Edit this formulation", edit_formulation_path(@formulation), class:"btn btn-outline-success btn-sm" %>
+  <%= link_to "Back to formulations", formulations_path, class:"btn btn-outline-success btn-sm" %>
 </div>
