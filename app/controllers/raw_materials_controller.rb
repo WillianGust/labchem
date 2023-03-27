@@ -3,7 +3,7 @@ class RawMaterialsController < ApplicationController
 
   # GET /raw_materials or /raw_materials.json
   def index
-    @raw_materials = RawMaterial.all
+    @raw_materials = RawMaterial.all.order(id: :desc)
 
     if params[:product_name].present?
       # @raw_materials = @raw_materials.where("raw_materials.product_name ilike '%#{params[:product_name]}%' or raw_materials.product_type ilike '%#{params[:product_name]}%'")
@@ -15,7 +15,7 @@ class RawMaterialsController < ApplicationController
     
     end
 
-    options = {page: params[:page] || 1, per_page:2}
+    options = {page: params[:page] || 1, per_page:3}
     @raw_materials = @raw_materials.paginate(options)
   end
 
