@@ -1,0 +1,29 @@
+<%= form_with(model: formulation) do |form| %>
+  <% if formulation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(formulation.errors.count, "error") %> prohibited this formulation from being saved:</h2>
+
+      <ul>
+        <% formulation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="form-floating mb-3">
+    <%= form.text_field :product_name, class: "form-control" %>
+    <%= form.label :product_name, style: "display: block", class: "col-sm-2 control-label" %>
+  </div>
+
+  <div class="form-floating mb-3">
+    <%= form.text_area :description, class: "form-control" %>
+    <%= form.label :description, style: "display: block", class: "col-sm-2 control-label" %>
+  </div>
+</div>
+
+  <div class="form-floating mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+    <%= form.submit class:"btn btn-sm btn-outline-success"%>
+  </div>
+<% end %>

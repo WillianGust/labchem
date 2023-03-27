@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Formulations</h1>
+
+<div id="formulations">
+  <% @formulations.each do |formulation| %>
+    <%= render formulation %>
+    <p>
+      <%= link_to "Show this formulation", formulation %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New formulation", new_formulation_path %>

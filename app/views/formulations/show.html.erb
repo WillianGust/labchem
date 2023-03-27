@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @formulation %>
+
+<div>
+  <%= link_to "Edit this formulation", edit_formulation_path(@formulation) %> |
+  <%= link_to "Back to formulations", formulations_path %>
+
+  <%= button_to "Destroy this formulation", @formulation, method: :delete %>
+</div>
