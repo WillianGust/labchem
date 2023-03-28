@@ -3,7 +3,7 @@ class FormulationsController < ApplicationController
 
   # GET /formulations or /formulations.json
   def index
-    @formulations = Formulation.all
+    @formulations = Formulation.all.order(updated_at: :desc)
   end
 
   # GET /formulations/1 or /formulations/1.json
@@ -25,7 +25,7 @@ class FormulationsController < ApplicationController
 
     respond_to do |format|
       if @formulation.save
-        format.html { redirect_to formulation_url(@formulation), notice: "Formulation was successfully created." }
+        format.html { redirect_to formulations_path(@formulation), notice: "Formulation was successfully created." }
         format.json { render :show, status: :created, location: @formulation }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class FormulationsController < ApplicationController
   def update
     respond_to do |format|
       if @formulation.update(formulation_params)
-        format.html { redirect_to formulation_url(@formulation), notice: "Formulation was successfully updated." }
+        format.html { redirect_to formulations_path(@formulation), notice: "Formulation was successfully updated." }
         format.json { render :show, status: :ok, location: @formulation }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class FormulationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def formulation_params
-      params.require(:formulation).permit(:product_name, :description)
+      params.require(:formulation).permit(:project_name, :description)
     end
 end

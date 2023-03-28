@@ -11,15 +11,15 @@
     </div>
   <% end %>
 
-<div class="container">
-  <div class="form-floating mb-3">
-    <%= form.text_field :product_name, class: "form-control" %>
-    <%= form.label :product_name, style: "display: block", class: "col-sm-2 control-label" %>
+<div class="container" style="display:flex; justify-content: space-evenly;">
+  <div class="col-6 form-outline mb-3">
+    <%= form.label :project_name, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_field :project_name, class: "form-control" %>
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.text_area :description, class: "form-control" %>
+  <div class="col-6  form-outline mb-3">
     <%= form.label :description, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_area :description, class: "form-control", size:"10" %>
   </div>
 </div>
 
