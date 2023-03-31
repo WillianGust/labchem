@@ -8,5 +8,19 @@
     <%= render "form", formulation: @formulation %>
     </div>
 </div>
-
+  <form id="new-user-form">
+    <div>
+      <label for="first_name">Project Name:</label>
+      <input type="text" id="first_name" name="formulation[project_name]">
+    </div>
+    
+    <div>
+      <label for="last_name">Description:</label>
+      <input type="text" id="last_name" name="formulation[description]">
+    </div>
+    
+    <div>
+      <button type="submit">Adicionar linha</button>
+    </div>
+  </form>
 

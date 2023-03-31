@@ -1,4 +1,5 @@
 class FormulationsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_formulation, only: %i[ show edit update destroy ]
 
   # GET /formulations or /formulations.json
