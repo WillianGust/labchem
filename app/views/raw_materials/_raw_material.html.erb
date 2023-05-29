@@ -37,5 +37,7 @@
         <% end %>
       </tbody>
     </table>
-<%= will_paginate @raw_materials, :container => false %>
+    <div class="apple_pagination mb-3">
+      <%= will_paginate @raw_materials, :container => false %>
+    </div>
 </div>
