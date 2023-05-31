@@ -11297,6 +11297,10 @@ form.user .btn-user {
 footer.sticky-footer {
   padding: 2rem 0;
   flex-shrink: 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  text-align: center;
 }
 
 footer.sticky-footer .copyright {
