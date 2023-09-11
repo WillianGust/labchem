@@ -1,0 +1,36 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal-<%= table_employee.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><%= table_employee.nom %></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="text-left">
+          <b><label for="">Nom:</label></b> <%= table_employee.nom %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Titre poste:</label></b> <%= table_employee.titre_poste %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Responsabilite:</label></b> <%= table_employee.responsabilite %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Exigence:</label></b> <%= table_employee.exigence %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Experience:</label></b> <%= table_employee.experience %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Profil / Competence:</label></b> <%= table_employee.profil_competence %>
+        </div>
+        <div class="text-left">
+          <b><label for="">Besoin Marche:</label></b> <%= table_employee.besoin_marche %>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Editer", edit_table_employee_path(table_employee), class:"btn btn-outline-success btn-sm" %>
+        </div>
+    </div>
+    

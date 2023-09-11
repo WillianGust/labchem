@@ -10,15 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_28_202653) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_11_151932) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "nome"
+  end
+
+  create_table "formulation_recipe", force: :cascade do |t|
+    t.string "product_code"
+    t.string "product_description"
+    t.boolean "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "formulations", force: :cascade do |t|
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "project_name"
+    t.string "itens"
   end
 
   create_table "raw_materials", force: :cascade do |t|
@@ -30,6 +47,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_202653) do
     t.float "pigment_volume_concentration"
     t.float "density"
     t.float "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "table_employees", force: :cascade do |t|
+    t.string "nom"
+    t.string "titre_poste"
+    t.text "responsabilite"
+    t.text "exigence"
+    t.text "experience"
+    t.text "profil_competence"
+    t.text "besoin_marche"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
