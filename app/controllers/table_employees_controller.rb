@@ -15,7 +15,7 @@ class TableEmployeesController < ApplicationController
     
     end
 
-    options = {page: params[:page] || 1, per_page:5}
+    options = {page: params[:page] || 1, per_page:3}
     @table_employees = @table_employees.paginate(options)
   end
 
@@ -39,7 +39,7 @@ class TableEmployeesController < ApplicationController
 
     respond_to do |format|
       if @table_employee.save
-        format.html { redirect_to table_employees_path(@table_employee), notice: "Raw material was successfully created." }
+        format.html { redirect_to table_employees_path(@table_employee), notice: "Compagnie a été créee" }
         format.json { render :show, status: :created, location: @table_employee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class TableEmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @table_employee.update(table_employee_params)
-        format.html { redirect_to raw_materials_path(@table_employee), notice: "Raw material was successfully updated." }
+        format.html { redirect_to table_employees_path(@table_employee), notice: "Compagnie a été mise-à-jour" }
         format.json { render :show, status: :ok, location: @table_employee }
       else
         format.html { render :edit, status: :unprocessable_entity }

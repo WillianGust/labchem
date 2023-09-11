@@ -13,42 +13,42 @@
 
 
 <div class="container">
-  <div class="form-floating mb-3">
-    <%= form.text_field :nom, class: "form-control " %>
+  <div class="mb-3">
     <%= form.label :nom, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_field :nom, class: "form-control " %>
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.text_field :titre_poste, class: "form-control" %>
+  <div class="mb-3">
     <%= form.label :titre_poste, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_field :titre_poste, class: "form-control" %>
   </div>
-  <div class="form-floating mb-3">
-    <%= form.text_field :responsabilite, class: "form-control" %>
+  <div class="mb-3">
     <%= form.label :responsabilite, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_area :responsabilite, class: "form-control", size: "5x5"%>
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.text_field :exigence, class: "form-control" %>
+  <div class="mb-3">
     <%= form.label :exigence, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_area :exigence, class: "form-control", size: "5x5" %>
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.text_field :experience, class: "form-control" %>
+  <div class="mb-3">
     <%= form.label :experience, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_field :experience, class: "form-control" %>
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.text_field :profil_competence, class: "form-control" %>
+  <div class="mb-3">
     <%= form.label :profil_competence, style: "display: block", class: "col-sm-2 control-label" %>
+    <%= form.text_area :profil_competence, class: "form-control", size: "5x5" %>
   </div>
 
-  <div class="form-floating mb-3">
-    <%= form.text_field :besoin_marche, class: "form-control" %>
+  <div class="mb-3">
     <%= form.label :besoin_marche, style: "display: block", class: "col-sm-2 control-label" %>
-  </div>
+    <%= form.text_area :besoin_marche, class: "form-control", size: "5x5" %>
+</div>
 
 
-  <div class="form-floating mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
+  <div class="mb-3 d-grid gap-2 d-md-flex justify-content-md-end">
     <%= form.submit "Envoyer", class:"btn btn-sm btn-outline-success" %>
   </div>
 </div>
