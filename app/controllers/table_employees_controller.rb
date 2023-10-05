@@ -5,12 +5,15 @@ class TableEmployeesController < ApplicationController
   def index
     @table_employees = TableEmployee.all.order(id: :desc)
 
-    if params[:product_name].present?
-      @table_employees = @table_employees.where("table_employees.nom ilike '%#{params[:nom]}%' or table_employees.titre_poste ilike '%#{params[:nom]}%'")
+    if params[:nom].present?
+      # @table_employees = @table_employees.where("table_employees.nom ilike '%#{params[:nom]}%' or table_employees.titre_poste ilike '%#{params[:nom]}%'")
     
       compagnie_name_like = TableEmployee.arel_table["nom"]
       compagnie_type_like = TableEmployee.arel_table["titre_poste"]
-      @table_employees = @table_employees.where(compagnie_name_like.matches("%#{params[:nom]}%")).or(@table_employees.where(compagnie_type_like.matches("%#{params[:nom]}%")))
+      compagnie_year_like = TableEmployee.arel_table["experience"]
+      compagnie_profil_competence_like = TableEmployee.arel_table["profil_competence"]
+
+      @table_employees = @table_employees.where(compagnie_name_like.matches("%#{params[:nom]}%")).or(@table_employees.where(compagnie_type_like.matches("%#{params[:nom]}%"))).or(@table_employees.where(compagnie_year_like.matches("%#{params[:nom]}%"))).or(@table_employees.where(compagnie_profil_competence_like.matches("%#{params[:nom]}%")))
 
     
     end
